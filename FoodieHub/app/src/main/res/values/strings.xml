@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FoodieHub</string>
+    <string name="foodiehub">FoodieHub</string>
+    <string name="login_to_your_account">Masuk ke Akun Anda</string>
+    <string name="continue_with">Lanjutkan dengan</string>
+    <string name="or">Atau</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="design">Didesain oleh Codelamps\n Andre Rizaldi Brillianto</string>
+    <string name="validation_location">Untuk memberikan pengalaman makan terbaik,\nkami memerlukan izin akses lokasi perangkat Anda.\nDengan mengaktifkan lokasi, kami dapat\nmenawarkan rekomendasi makanan terdekat,\nperkiraan pengiriman yang akurat, dan\nmemastikan pengantaran yang lancar.</string>
+    <string name="explore_your_favorite_food">Jelajahi Makanan Favoritmu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="demo">Testing</string>
+    <string name="menu">Menu</string>
+</resources>

@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const authController = require('../controllers/authController');
+const authMiddleware = require('../middleware/authMiddleware');
+
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+router.post('/logout', authMiddleware, authController.logout);
+
+// These were also requested under Auth API
+router.get('/profile', authMiddleware, authController.profile);
+router.put('/profile', authMiddleware, authController.updateProfile);
+
+module.exports = router;

@@ -1,0 +1,24 @@
+# Backend ignores
+Backend_FoodieHub/node_modules/
+Backend_FoodieHub/.env
+Backend_FoodieHub/src/uploads/*
+!Backend_FoodieHub/src/uploads/.gitkeep
+
+# Android frontend ignores
+FoodieHub/.gradle/
+FoodieHub/local.properties
+FoodieHub/.idea/
+FoodieHub/.vscode/
+FoodieHub/build/
+FoodieHub/app/build/
+FoodieHub/capture/
+FoodieHub/*.iml
+FoodieHub/.cxx/
+
+# Archives and System files
+FoodieHub.zip
+.DS_Store
+Thumbs.db
+*.zip
+*.rar
+*.tar.gz
