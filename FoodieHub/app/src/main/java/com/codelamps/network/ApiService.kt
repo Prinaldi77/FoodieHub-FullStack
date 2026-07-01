@@ -69,3 +69,28 @@ interface NominatimApiService {
         @Query("format") format: String = "json"
     ): Call<GeocodeResponse>
 }
+
+// ============================================================
+// INTERFACE TERPISAH untuk API PUBLIK TheMealDB
+// Base URL: https://www.themealdb.com/api/json/v1/1/
+// Tujuan  : Menampilkan inspirasi kuliner di halaman beranda
+// Bebas digunakan (Public API, gratis, tanpa API key)
+// ============================================================
+interface TheMealDbApiService {
+
+    /** Ambil semua kategori makanan (Beef, Chicken, Seafood, dst) */
+    @GET("categories.php")
+    fun getCategories(): Call<MealCategoryResponse>
+
+    /** Cari makanan berdasarkan nama (mis: "chicken", "beef") */
+    @GET("search.php")
+    fun searchMeals(@Query("s") query: String): Call<MealResponse>
+
+    /** Filter makanan berdasarkan kategori */
+    @GET("filter.php")
+    fun getMealsByCategory(@Query("c") category: String): Call<MealResponse>
+
+    /** Ambil 1 makanan acak untuk banner inspirasi */
+    @GET("random.php")
+    fun getRandomMeal(): Call<MealResponse>
+}

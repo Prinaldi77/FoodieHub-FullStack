@@ -21,8 +21,12 @@ object RetrofitClient {
     // URL API Publik OpenStreetMap Nominatim (reverse geocoding GPS)
     private const val NOMINATIM_URL = "https://nominatim.openstreetmap.org/"
 
+    // URL API Publik TheMealDB (inspirasi kuliner di halaman Home)
+    private const val MEALDB_URL = "https://www.themealdb.com/api/json/v1/1/"
+
     private var retrofit: Retrofit? = null
     private var nominatimRetrofit: Retrofit? = null
+    private var mealDbRetrofit: Retrofit? = null
 
     /**
      * Retrofit client untuk backend pribadi (dengan token auth)
@@ -80,5 +84,31 @@ object RetrofitClient {
                 .build()
         }
         return nominatimRetrofit!!.create(NominatimApiService::class.java)
+    }
+
+    /**
+     * Retrofit client untuk API Publik TheMealDB (tanpa auth token)
+     * Digunakan untuk menampilkan inspirasi kuliner di HomeFragment
+     * Endpoint: https://www.themealdb.com/api/json/v1/1/
+     */
+    fun getMealDbClient(): TheMealDbApiService {
+        if (mealDbRetrofit == null) {
+            val logging = HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BASIC
+            }
+
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .build()
+
+            mealDbRetrofit = Retrofit.Builder()
+                .baseUrl(MEALDB_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
+                .build()
+        }
+        return mealDbRetrofit!!.create(TheMealDbApiService::class.java)
     }
 }

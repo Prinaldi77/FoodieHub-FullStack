@@ -188,3 +188,33 @@ data class GeocodeAddress(
     @SerializedName("postcode") val postcode: String?,
     @SerializedName("country") val country: String?
 )
+
+// ============================================================
+// API PUBLIK: TheMealDB
+// Endpoint  : https://www.themealdb.com/api/json/v1/1/
+// Tujuan    : Menampilkan inspirasi kuliner real-time di Home
+// Gratis    : 100%, tanpa API key, open untuk umum
+// ============================================================
+data class MealCategoryResponse(
+    @SerializedName("categories") val categories: List<MealCategory>?
+)
+
+data class MealCategory(
+    @SerializedName("idCategory") val id: String,
+    @SerializedName("strCategory") val name: String,
+    @SerializedName("strCategoryThumb") val imageUrl: String,
+    @SerializedName("strCategoryDescription") val description: String?
+)
+
+data class MealResponse(
+    @SerializedName("meals") val meals: List<MealItem>?
+)
+
+data class MealItem(
+    @SerializedName("idMeal") val id: String,
+    @SerializedName("strMeal") val name: String,
+    @SerializedName("strMealThumb") val imageUrl: String,
+    @SerializedName("strArea") val area: String?,
+    @SerializedName("strCategory") val category: String?,
+    @SerializedName("strInstructions") val instructions: String?
+)
