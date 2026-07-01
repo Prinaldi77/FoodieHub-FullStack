@@ -10,7 +10,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.8,
         stock: 50,
-        image_url: "http://10.12.14.100:5000/uploads/bakso_urat_spesial.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/bakso_urat_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c02",
@@ -20,7 +20,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 30,
-        image_url: "http://10.12.14.100:5000/uploads/bakso_mercon_pedas.png"
+        image_url: "http://127.0.0.1:5000/uploads/bakso_mercon_pedas.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c03",
@@ -40,7 +40,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.5,
         stock: 40,
-        image_url: "http://10.12.14.100:5000/uploads/mie_ayam_bakso.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/mie_ayam_bakso.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c05",
@@ -50,7 +50,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.4,
         stock: 25,
-        image_url: "http://10.12.14.100:5000/uploads/mie_ayam_ceker.png"
+        image_url: "http://127.0.0.1:5000/uploads/mie_ayam_ceker.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c06",
@@ -60,7 +60,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 35,
-        image_url: "http://10.12.14.100:5000/uploads/bakso_beranak_jumbo.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/bakso_beranak_jumbo.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c07",
@@ -70,7 +70,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.6,
         stock: 70,
-        image_url: "http://10.12.14.100:5000/uploads/tahu_bakso_goreng.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/tahu_bakso_goreng.jpg"
     },
 
     // ─── KULINER INDONESIA (Menu Baru Tambahan) ───────────────────────────
@@ -82,7 +82,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.9,
         stock: 60,
-        image_url: "http://10.12.14.100:5000/uploads/nasi_goreng_spesial.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/nasi_goreng_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c21",
@@ -92,7 +92,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.9,
         stock: 30,
-        image_url: "http://10.12.14.100:5000/uploads/rendang_daging_sapi.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/rendang_daging_sapi.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c22",
@@ -102,7 +102,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.8,
         stock: 40,
-        image_url: "http://10.12.14.100:5000/uploads/sate_ayam_madura.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/sate_ayam_madura.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c23",
@@ -112,7 +112,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 35,
-        image_url: "http://10.12.14.100:5000/uploads/soto_ayam_lamongan.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/soto_ayam_lamongan.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c24",
@@ -122,7 +122,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.6,
         stock: 45,
-        image_url: "http://10.12.14.100:5000/uploads/gado_gado.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/gado_gado.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c25",
@@ -142,7 +142,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 40,
-        image_url: "http://10.12.14.100:5000/uploads/ayam_goreng_penyet.png"
+        image_url: "http://127.0.0.1:5000/uploads/ayam_goreng_penyet.png"
     },
 
     // ─── ANEKA MINUMAN ────────────────────────────────────────────────────
@@ -164,7 +164,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.7,
         stock: 80,
-        image_url: "http://10.12.14.100:5000/uploads/es_jeruk_peras.png"
+        image_url: "http://127.0.0.1:5000/uploads/es_jeruk_peras.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c10",
@@ -174,7 +174,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.6,
         stock: 40,
-        image_url: "http://10.12.14.100:5000/uploads/jus_alpukat_mentega.png"
+        image_url: "http://127.0.0.1:5000/uploads/jus_alpukat_mentega.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c11",
@@ -184,7 +184,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.8,
         stock: 60,
-        image_url: "http://10.12.14.100:5000/uploads/es_campur_spesial.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/es_campur_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c27",
@@ -194,7 +194,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.8,
         stock: 50,
-        image_url: "http://10.12.14.100:5000/uploads/es_kelapa_muda_gula_jawa.jpg"
+        image_url: "http://127.0.0.1:5000/uploads/es_kelapa_muda_gula_jawa.jpg"
     }
 ];
 
