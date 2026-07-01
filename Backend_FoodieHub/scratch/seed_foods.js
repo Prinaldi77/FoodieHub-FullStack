@@ -1,27 +1,41 @@
 const db = require('../src/config/database');
 
 const foodsAndDrinks = [
+    // ─── BAKSO & MIE (Menu Awal) ──────────────────────────────────────────
     {
-        name: "Nasi Goreng Spesial",
-        description: "Nasi goreng khas Indonesia dengan bumbu rempah pilihan, dilengkapi telur mata sapi, kerupuk, acar, dan potongan ayam goreng.",
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c01",
+        name: "Bakso Urat Spesial",
+        description: "Bakso urat sapi asli ukuran besar disajikan dengan kuah kaldu sapi gurih hangat, mie kuning, bihun, dan sayuran segar.",
         price: 25000.00,
         category: "Makanan",
         rating: 4.8,
         stock: 50,
-        image_url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500"
+        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
     },
     {
-        name: "Sate Ayam Madura",
-        description: "10 tusuk sate daging ayam pilihan yang dibakar dengan bumbu kecap manis khas Madura, disajikan dengan saus kacang gurih dan irisan bawang merah.",
-        price: 30000.00,
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c02",
+        name: "Bakso Mercon Pedas",
+        description: "Bakso ukuran jumbo isi cincang cabe rawit pedas meledak di mulut, dilengkapi bakso kecil dan kuah pedas gurih.",
+        price: 26000.00,
         category: "Makanan",
         rating: 4.7,
         stock: 30,
-        image_url: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500"
+        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
     },
     {
-        name: "Mie Goreng Jawa",
-        description: "Mie kuning basah khas Jawa yang ditumis dengan telur, sayur kol, sawi, bakso sapi, ayam suwir, dan rasa manis gurih kecap manis.",
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c03",
+        name: "Bakso Telur Puyuh",
+        description: "Bakso halus berisi telur puyuh gurih, disajikan lengkap dengan kuah sup kaldu bening yang wangi.",
+        price: 24000.00,
+        category: "Makanan",
+        rating: 4.6,
+        stock: 45,
+        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c04",
+        name: "Mie Ayam Bakso",
+        description: "Mie kenyal buatan sendiri ditaburi daging ayam kecap bumbu rempah pilihan dan disajikan dengan 2 butir bakso sapi halus.",
         price: 22000.00,
         category: "Makanan",
         rating: 4.5,
@@ -29,35 +43,113 @@ const foodsAndDrinks = [
         image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
     },
     {
-        name: "Bakso Sapi Solo",
-        description: "Bakso daging sapi asli Solo disajikan dengan kuah kaldu sapi hangat nan gurih, dilengkapi mie kuning, bihun, sawi hijau, dan seledri.",
-        price: 20000.00,
-        category: "Makanan",
-        rating: 4.6,
-        stock: 45,
-        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
-    },
-    {
-        name: "Gado-Gado Betawi",
-        description: "Sayuran rebus segar (tauge, kangkung, kacang panjang), tahu goreng, tempe, telur rebus, disiram dengan bumbu kacang khas Betawi dan kerupuk emping.",
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c05",
+        name: "Mie Ayam Ceker",
+        description: "Mie ayam lezat dengan topping ceker ayam empuk rasa manis gurih khas Jawa.",
         price: 18000.00,
         category: "Makanan",
         rating: 4.4,
         stock: 25,
-        image_url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500"
+        image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
     },
     {
-        name: "Ayam Goreng Kremes",
-        description: "Ayam goreng bumbu ungkep gurih dengan taburan kremesan yang renyah di luar dan daging ayam yang lembut di dalam, lengkap dengan lalapan dan sambal korek.",
-        price: 28000.00,
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c06",
+        name: "Bakso Beranak Jumbo",
+        description: "Bakso super jumbo yang di dalamnya berisi bakso-bakso kecil, tetelan, dan telur puyuh. Sangat mengenyangkan.",
+        price: 35000.00,
         category: "Makanan",
         rating: 4.7,
         stock: 35,
-        image_url: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500"
+        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
     },
     {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c07",
+        name: "Tahu Bakso Goreng",
+        description: "Tahu goreng dengan isian adonan bakso sapi gurih renyah, isi 5 pcs lengkap dengan cabai rawit hijau.",
+        price: 15000.00,
+        category: "Makanan",
+        rating: 4.6,
+        stock: 70,
+        image_url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500"
+    },
+
+    // ─── KULINER INDONESIA (Menu Baru Tambahan) ───────────────────────────
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c20",
+        name: "Nasi Goreng Spesial",
+        description: "Nasi goreng bumbu Jawa harum gurih wangi pandan disajikan dengan telur mata sapi, kerupuk, acar segar, dan taburan ayam suwir.",
+        price: 20000.00,
+        category: "Makanan",
+        rating: 4.9,
+        stock: 60,
+        image_url: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c21",
+        name: "Rendang Daging Sapi",
+        description: "Daging sapi pilihan empuk dimasak perlahan dalam santan kental dengan ramuan rempah khas Minang yang kaya rasa.",
+        price: 32000.00,
+        category: "Makanan",
+        rating: 4.9,
+        stock: 30,
+        image_url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c22",
+        name: "Sate Ayam Madura",
+        description: "Sate daging ayam bakar bumbu kacang manis gurih khas Madura, isi 10 tusuk lengkap dengan lontong empuk dan irisan bawang merah.",
+        price: 25000.00,
+        category: "Makanan",
+        rating: 4.8,
+        stock: 40,
+        image_url: "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c23",
+        name: "Soto Ayam Lamongan",
+        description: "Soto ayam kuah kuning hangat dengan bumbu koya gurih melimpah, suwiran daging ayam, soun, kol, dan telur rebus setengah matang.",
+        price: 20000.00,
+        category: "Makanan",
+        rating: 4.7,
+        stock: 35,
+        image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c24",
+        name: "Gado-Gado Betawi",
+        description: "Aneka sayur rebus segar (tauge, kacang panjang, kol), tahu, tempe, kentang, telur rebus, disiram dengan bumbu kacang kental legit khas Betawi.",
+        price: 18000.00,
+        category: "Makanan",
+        rating: 4.6,
+        stock: 45,
+        image_url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c25",
+        name: "Sop Buntut Sapi",
+        description: "Sop kaldu sapi bening kaya bumbu rempah dengan buntut sapi empuk, kentang, wortel, daun bawang, lengkap dengan emping renyah.",
+        price: 45000.00,
+        category: "Makanan",
+        rating: 4.9,
+        stock: 20,
+        image_url: "https://images.unsplash.com/photo-1547592180-85f173990554?w=500"
+    },
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c26",
+        name: "Ayam Goreng Penyet",
+        description: "Ayam goreng bumbu kuning empuk yang digeprek bersama sambal bawang pedas meledak dan lalapan segar timun serta kemangi.",
+        price: 22000.00,
+        category: "Makanan",
+        rating: 4.7,
+        stock: 40,
+        image_url: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500"
+    },
+
+    // ─── ANEKA MINUMAN ────────────────────────────────────────────────────
+    {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c08",
         name: "Es Teh Manis",
-        description: "Teh hitam melati seduh berkualitas disajikan dingin dengan es batu dan gula asli yang manis menyegarkan.",
+        description: "Teh melati manis wangi disajikan segar dengan es es batu melimpah.",
         price: 5000.00,
         category: "Minuman",
         rating: 4.9,
@@ -65,8 +157,9 @@ const foodsAndDrinks = [
         image_url: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500"
     },
     {
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c09",
         name: "Es Jeruk Peras",
-        description: "Jeruk peras segar alami kaya vitamin C, dipadukan dengan es batu dan sirup gula murni untuk melepas dahaga.",
+        description: "Jeruk peras murni segar, manis alami asam menyegarkan tenggorokan.",
         price: 8000.00,
         category: "Minuman",
         rating: 4.7,
@@ -74,8 +167,9 @@ const foodsAndDrinks = [
         image_url: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500"
     },
     {
-        name: "Jus Alpukat",
-        description: "Jus buah alpukat mentega segar yang kental, disajikan dingin dengan es serut dan siraman susu kental manis cokelat.",
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c10",
+        name: "Jus Alpukat Mentega",
+        description: "Jus alpukat mentega segar kental manis, ditambah lumuran susu kental manis cokelat di dinding gelas.",
         price: 12000.00,
         category: "Minuman",
         rating: 4.6,
@@ -83,76 +177,24 @@ const foodsAndDrinks = [
         image_url: "https://images.unsplash.com/photo-1603046891744-1f76eb10aec1?w=500"
     },
     {
-        name: "Kopi Susu Gula Aren",
-        description: "Espresso robusta berkualitas dicampur dengan susu cair segar dan pemanis gula aren alami yang wangi dan gurih.",
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c11",
+        name: "Es Campur Spesial",
+        description: "Es campur berisi potongan buah alpukat, nangka, kelapa muda, jelly, kolang kaling, dengan siraman sirup merah dan susu kental manis.",
         price: 15000.00,
         category: "Minuman",
         rating: 4.8,
         stock: 60,
-        image_url: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500"
-    },
-    {
-        name: "Pizza Margherita Spesial",
-        description: "Pizza khas Italia dengan saus tomat premium, irisan keju mozzarella leleh, daun basil segar, dan siraman minyak zaitun hangat.",
-        price: 75000.00,
-        category: "Makanan",
-        rating: 4.9,
-        stock: 25,
-        image_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500"
-    },
-    {
-        name: "Burger Sapi Panggang",
-        description: "Double patty daging sapi panggang juicy dengan lelehan keju cheddar, selada segar, tomat, bawang bombay, dan saus burger spesial.",
-        price: 35000.00,
-        category: "Makanan",
-        rating: 4.7,
-        stock: 40,
-        image_url: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500"
-    },
-    {
-        name: "Kentang Goreng Renyah",
-        description: "Kentang goreng potongan tebal gurih dengan bumbu garam bawang, renyah di luar dan lembut di dalam. Disajikan dengan saus sambal.",
-        price: 15000.00,
-        category: "Makanan",
-        rating: 4.6,
-        stock: 70,
-        image_url: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500"
-    },
-    {
-        name: "Fried Chicken Crispy",
-        description: "Daging ayam goreng tepung bumbu rahasia yang super renyah dan kriuk di kulitnya namun tetap juicy di dalam. Isi 2 potong besar.",
-        price: 26000.00,
-        category: "Makanan",
-        rating: 4.8,
-        stock: 45,
-        image_url: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=500"
-    },
-    {
-        name: "Spageti Bolognese",
-        description: "Pasta spageti lembut disiram dengan saus bolognese daging sapi cincang berlimpah, parutan keju parmesan, dan garnish peterseli segar.",
-        price: 38000.00,
-        category: "Makanan",
-        rating: 4.7,
-        stock: 30,
-        image_url: "https://images.unsplash.com/photo-1516100882582-76c9a28b0611?w=500"
-    },
-    {
-        name: "Milkshake Cokelat Oreo",
-        description: "Susu segar diblender creamy dengan es krim cokelat belgian premium dan remahan biskuit Oreo manis gurih, ditambah whipped cream.",
-        price: 18000.00,
-        category: "Minuman",
-        rating: 4.9,
-        stock: 50,
         image_url: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500"
     },
     {
-        name: "Jus Mangga Segar",
-        description: "Jus buah mangga arumanis segar manis matang pohon diblender es batu tanpa pemanis buatan, kaya vitamin A & C.",
-        price: 14000.00,
+        id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c27",
+        name: "Es Kelapa Muda Gula Jawa",
+        description: "Air kelapa muda segar berpadu dengan daging kelapa muda lembut, serutan es batu, dan manis khas gula Jawa cair.",
+        price: 10000.00,
         category: "Minuman",
         rating: 4.8,
-        stock: 60,
-        image_url: "https://images.unsplash.com/photo-1553177174-1e20ebc525c3?w=500"
+        stock: 50,
+        image_url: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500"
     }
 ];
 
@@ -167,9 +209,9 @@ async function seedFoods() {
         console.log("Seeding new food and drink items...");
         for (const item of foodsAndDrinks) {
             await db.query(`
-                INSERT INTO foods (name, description, price, category, rating, stock, image_url)
-                VALUES ($1, $2, $3, $4, $5, $6, $7)
-            `, [item.name, item.description, item.price, item.category, item.rating, item.stock, item.image_url]);
+                INSERT INTO foods (id, name, description, price, category, rating, stock, image_url)
+                VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+            `, [item.id, item.name, item.description, item.price, item.category, item.rating, item.stock, item.image_url]);
         }
         console.log("Successfully seeded " + foodsAndDrinks.length + " items!");
     } catch (err) {
