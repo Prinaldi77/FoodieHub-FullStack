@@ -115,21 +115,20 @@ class HomeFragment : Fragment() {
     }
 
     /**
-     * Mengambil data inspirasi kuliner dari API Publik TheMealDB secara real-time.
-     * Endpoint: https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken
+     * Mengambil data inspirasi kuliner khas Indonesia/Melayu dari API Publik TheMealDB secara real-time.
+     * Menggunakan query pencarian nama menu spesifik: Nasi Goreng, Rendang, Satay, Laksa.
      * API ini sepenuhnya gratis dan tidak memerlukan API key.
      */
     private fun loadMealInspiration() {
         binding.pbInspiration.visibility = View.VISIBLE
 
-        // Ambil berbagai kategori makanan untuk variasi inspirasi
-        val categories = listOf("Chicken", "Beef", "Seafood", "Pasta")
+        val indonesianQueries = listOf("Nasi Goreng", "Rendang", "Satay", "Laksa")
         val allMeals = mutableListOf<MealItem>()
         var loadedCount = 0
 
-        categories.forEach { category ->
+        indonesianQueries.forEach { query ->
             RetrofitClient.getMealDbClient()
-                .getMealsByCategory(category)
+                .searchMeals(query)
                 .enqueue(object : Callback<MealResponse> {
                     override fun onResponse(
                         call: Call<MealResponse>,
@@ -137,19 +136,28 @@ class HomeFragment : Fragment() {
                     ) {
                         loadedCount++
                         if (response.isSuccessful) {
-                            val meals = response.body()?.meals ?: emptyList()
-                            // Ambil maksimal 3 item per kategori dengan tag kategori
-                            val taggedMeals = meals.take(3).map { meal ->
-                                meal.copy(category = category)
+                            val meals = response.body()?.meals
+                            if (!meals.isNullOrEmpty()) {
+                                // Ambil menu teratas hasil pencarian
+                                val firstMeal = meals[0]
+                                
+                                // Map kategori visual secara manual agar rapi
+                                val matchedCategory = when {
+                                    firstMeal.name.contains("Rendang", ignoreCase = true) -> "Beef"
+                                    firstMeal.name.contains("Goreng", ignoreCase = true) -> "Rice"
+                                    firstMeal.name.contains("Satay", ignoreCase = true) -> "Chicken"
+                                    else -> "Soup"
+                                }
+                                
+                                allMeals.add(firstMeal.copy(category = matchedCategory))
                             }
-                            allMeals.addAll(taggedMeals)
                         }
 
-                        // Semua kategori selesai dimuat
-                        if (loadedCount == categories.size) {
+                        // Semua query pencarian selesai dimuat
+                        if (loadedCount == indonesianQueries.size) {
                             binding.pbInspiration.visibility = View.GONE
                             if (allMeals.isNotEmpty()) {
-                                mealInspirationAdapter?.updateData(allMeals.shuffled())
+                                mealInspirationAdapter?.updateData(allMeals)
                             } else {
                                 binding.tvPoweredBy.text = "TheMealDB (offline)"
                             }
@@ -158,7 +166,7 @@ class HomeFragment : Fragment() {
 
                     override fun onFailure(call: Call<MealResponse>, t: Throwable) {
                         loadedCount++
-                        if (loadedCount == categories.size) {
+                        if (loadedCount == indonesianQueries.size) {
                             binding.pbInspiration.visibility = View.GONE
                             binding.tvPoweredBy.text = "TheMealDB (tidak tersedia)"
                         }
