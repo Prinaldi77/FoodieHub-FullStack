@@ -10,7 +10,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.8,
         stock: 50,
-        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/bakso_urat_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c02",
@@ -20,7 +20,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 30,
-        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/bakso_mercon_pedas.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c03",
@@ -40,7 +40,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.5,
         stock: 40,
-        image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/mie_ayam_bakso.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c05",
@@ -50,7 +50,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.4,
         stock: 25,
-        image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/mie_ayam_ceker.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c06",
@@ -60,7 +60,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 35,
-        image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/bakso_beranak_jumbo.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c07",
@@ -70,7 +70,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.6,
         stock: 70,
-        image_url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/tahu_bakso_goreng.jpg"
     },
 
     // ─── KULINER INDONESIA (Menu Baru Tambahan) ───────────────────────────
@@ -82,7 +82,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.9,
         stock: 60,
-        image_url: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/nasi_goreng_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c21",
@@ -92,7 +92,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.9,
         stock: 30,
-        image_url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/rendang_daging_sapi.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c22",
@@ -102,7 +102,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.8,
         stock: 40,
-        image_url: "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/sate_ayam_madura.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c23",
@@ -112,7 +112,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 35,
-        image_url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/soto_ayam_lamongan.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c24",
@@ -122,7 +122,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.6,
         stock: 45,
-        image_url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/gado_gado.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c25",

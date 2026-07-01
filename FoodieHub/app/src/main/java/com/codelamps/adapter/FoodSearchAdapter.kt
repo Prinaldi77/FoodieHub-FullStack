@@ -51,6 +51,11 @@ class FoodSearchAdapter(
             holder.menuImage.setImageResource(R.drawable.menu)
         }
 
+        // Tampilkan Detail Makanan ketika kartu item diklik
+        holder.itemView.setOnClickListener {
+            com.codelamps.utils.FoodDetailDialog.show(holder.itemView.context, food)
+        }
+
         holder.addToCart.setOnClickListener {
             holder.addToCart.isEnabled = false
             val apiService = RetrofitClient.getClient(holder.itemView.context)

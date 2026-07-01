@@ -35,6 +35,11 @@ class MenuAdapter(private var foods: List<FoodData>) : RecyclerView.Adapter<Menu
                     menuImage.setImageResource(R.drawable.menu)
                 }
 
+                // Tampilkan Detail Makanan ketika kartu item diklik
+                itemView.setOnClickListener {
+                    com.codelamps.utils.FoodDetailDialog.show(itemView.context, food)
+                }
+
                 addToCart.setOnClickListener {
                     addToCart.isEnabled = false
                     val apiService = RetrofitClient.getClient(itemView.context)
