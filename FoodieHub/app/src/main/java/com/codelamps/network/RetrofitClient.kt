@@ -9,8 +9,14 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    // URL backend Node.js (emulator Android → localhost komputer = 10.0.2.2)
-    private const val BASE_URL = "http://10.0.2.2:5000/"
+    // ──────────────────────────────────────────────────────────────────────
+    // BASE URL BACKEND
+    // Untuk EMULATOR Android  → gunakan: "http://10.0.2.2:5000/"
+    // Untuk HP FISIK (WiFi)   → gunakan: IP komputer di jaringan yang sama
+    // IP komputer saat ini    : 10.12.14.100 (cek via: ipconfig di CMD)
+    // ⚠️  HP fisik & komputer HARUS terhubung ke WiFi yang SAMA
+    // ──────────────────────────────────────────────────────────────────────
+    private const val BASE_URL = "http://10.12.14.100:5000/"
 
     // URL API Publik OpenStreetMap Nominatim (reverse geocoding GPS)
     private const val NOMINATIM_URL = "https://nominatim.openstreetmap.org/"
