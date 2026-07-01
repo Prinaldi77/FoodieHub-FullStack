@@ -80,6 +80,7 @@ data class OrderHistoryResponse(
 data class OrderSummaryData(
     @SerializedName("id") val id: String,
     @SerializedName("user_id") val userId: String,
+    @SerializedName("fullname") val fullname: String?,
     @SerializedName("total_price") val totalPrice: String,
     @SerializedName("status") val status: String,
     @SerializedName("delivery_address") val deliveryAddress: String,
@@ -167,7 +168,8 @@ data class FoodData(
     @SerializedName("price") val price: String,
     @SerializedName("image_url") val imageUrl: String?,
     @SerializedName("description") val description: String?,
-    @SerializedName("category") val category: String?
+    @SerializedName("category") val category: String?,
+    @SerializedName("stock") val stock: Int?
 )
 
 // ============================================================

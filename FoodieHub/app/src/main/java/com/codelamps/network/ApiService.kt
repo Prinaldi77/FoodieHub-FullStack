@@ -48,6 +48,23 @@ interface ApiService {
 
     @GET("api/foods/search")
     fun searchFoods(@Query("q") query: String): Call<FoodsResponse>
+
+    // ─── ADMIN: KELOLA MENU MAKANAN ──────────────────────────────────────
+    @POST("api/foods")
+    fun createFood(@Body body: HashMap<String, Any>): Call<FoodsResponse>
+
+    @PUT("api/foods/{id}")
+    fun updateFood(@Path("id") id: String, @Body body: HashMap<String, Any>): Call<FoodsResponse>
+
+    @DELETE("api/foods/{id}")
+    fun deleteFood(@Path("id") id: String): Call<FoodsResponse>
+
+    // ─── ADMIN: KELOLA PESANAN CUSTOMER ──────────────────────────────────
+    @GET("api/orders/all")
+    fun getAllOrders(): Call<OrderHistoryResponse>
+
+    @PUT("api/orders/{id}/status")
+    fun updateOrderStatus(@Path("id") id: String, @Body body: HashMap<String, String>): Call<OrderDetailResponse>
 }
 
 // ============================================================

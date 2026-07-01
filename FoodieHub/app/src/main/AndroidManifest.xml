@@ -26,6 +26,26 @@
             android:name=".PaymentWebViewActivity"
             android:exported="false" />
 
+        <!-- Halaman Panel Admin (Dashboard Admin) -->
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+
+        <!-- Admin: Halaman Daftar Kelola Menu Makanan -->
+        <activity
+            android:name=".ManageMenuActivity"
+            android:exported="false" />
+
+        <!-- Admin: Form Tambah/Ubah Menu Makanan -->
+        <activity
+            android:name=".EditFoodActivity"
+            android:exported="false" />
+
+        <!-- Admin: Halaman Antrean Kelola Pesanan Customer -->
+        <activity
+            android:name=".AdminOrderActivity"
+            android:exported="false" />
+
         <!-- Dialog Status Pesanan -->
         <activity
             android:name=".WindowDialogs"

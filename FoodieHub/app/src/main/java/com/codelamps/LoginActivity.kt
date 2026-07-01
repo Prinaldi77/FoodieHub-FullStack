@@ -30,7 +30,12 @@ class LoginActivity : AppCompatActivity() {
 
         // Check if user is already logged in
         if (sessionManager.isLoggedIn()) {
-            startActivity(Intent(this, MainActivity::class.java))
+            val userEmail = sessionManager.getUserEmail() ?: ""
+            if (userEmail.contains("admin", ignoreCase = true)) {
+                startActivity(Intent(this, AdminActivity::class.java))
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
             finish()
             return
         }
@@ -72,8 +77,12 @@ class LoginActivity : AppCompatActivity() {
                             // Tampilkan pesan berhasil
                             Toast.makeText(this@LoginActivity, "Login Berhasil!", Toast.LENGTH_SHORT).show()
 
-                            // Pindah ke MainActivity
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            // Arahkan ke Admin atau Customer berdasarkan email
+                            val intent = if (loginData.user.email.contains("admin", ignoreCase = true)) {
+                                Intent(this@LoginActivity, AdminActivity::class.java)
+                            } else {
+                                Intent(this@LoginActivity, MainActivity::class.java)
+                            }
                             startActivity(intent)
 
                             // PENTING: Tutup halaman login agar tidak menumpuk
