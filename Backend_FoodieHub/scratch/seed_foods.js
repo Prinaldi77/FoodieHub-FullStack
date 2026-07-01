@@ -142,7 +142,7 @@ const foodsAndDrinks = [
         category: "Makanan",
         rating: 4.7,
         stock: 40,
-        image_url: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/ayam_goreng_penyet.png"
     },
 
     // ─── ANEKA MINUMAN ────────────────────────────────────────────────────
@@ -164,7 +164,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.7,
         stock: 80,
-        image_url: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/es_jeruk_peras.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c10",
@@ -174,7 +174,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.6,
         stock: 40,
-        image_url: "https://images.unsplash.com/photo-1603046891744-1f76eb10aec1?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/jus_alpukat_mentega.png"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c11",
@@ -184,7 +184,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.8,
         stock: 60,
-        image_url: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/es_campur_spesial.jpg"
     },
     {
         id: "b1a2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c27",
@@ -194,7 +194,7 @@ const foodsAndDrinks = [
         category: "Minuman",
         rating: 4.8,
         stock: 50,
-        image_url: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500"
+        image_url: "http://10.12.14.100:5000/uploads/es_kelapa_muda_gula_jawa.jpg"
     }
 ];
 
