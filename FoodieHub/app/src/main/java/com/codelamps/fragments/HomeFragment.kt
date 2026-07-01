@@ -158,6 +158,7 @@ class HomeFragment : Fragment() {
                             binding.pbInspiration.visibility = View.GONE
                             if (allMeals.isNotEmpty()) {
                                 mealInspirationAdapter?.updateData(allMeals)
+                                updateBannerSlider(allMeals)
                             } else {
                                 binding.tvPoweredBy.text = "TheMealDB (offline)"
                             }
@@ -172,6 +173,29 @@ class HomeFragment : Fragment() {
                         }
                     }
                 })
+        }
+    }
+
+    /**
+     * Memperbarui Image Slider Promo secara dinamis menggunakan gambar makanan Indonesia dari TheMealDB.
+     * Menggantikan gambar Pizza statis bawaan design template.
+     */
+    private fun updateBannerSlider(meals: List<MealItem>) {
+        val sliderList = ArrayList<SlideModel>()
+        
+        // Ambil maksimal 3 item makanan untuk dijadikan slide promo banner
+        meals.take(3).forEach { meal ->
+            sliderList.add(
+                SlideModel(
+                    meal.imageUrl, 
+                    "Promo Hari Ini: ${meal.name}", 
+                    ScaleTypes.CENTER_CROP
+                )
+            )
+        }
+        
+        if (sliderList.isNotEmpty()) {
+            binding.imageSlider.setImageList(sliderList, ScaleTypes.CENTER_CROP)
         }
     }
 }
