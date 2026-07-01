@@ -8,9 +8,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private const val BASE_URL = "http://10.0.2.2:5000/"
-    private var retrofit: Retrofit? = null
 
+    // URL backend Node.js (emulator Android → localhost komputer = 10.0.2.2)
+    private const val BASE_URL = "http://10.0.2.2:5000/"
+
+    // URL API Publik OpenStreetMap Nominatim (reverse geocoding GPS)
+    private const val NOMINATIM_URL = "https://nominatim.openstreetmap.org/"
+
+    private var retrofit: Retrofit? = null
+    private var nominatimRetrofit: Retrofit? = null
+
+    /**
+     * Retrofit client untuk backend pribadi (dengan token auth)
+     */
     fun getClient(context: Context): ApiService {
         if (retrofit == null) {
             val sessionManager = SessionManager(context)
@@ -39,5 +49,30 @@ object RetrofitClient {
                 .build()
         }
         return retrofit!!.create(ApiService::class.java)
+    }
+
+    /**
+     * Retrofit client untuk API Publik Nominatim (tanpa auth token)
+     * Digunakan untuk reverse geocoding: koordinat GPS → nama alamat
+     */
+    fun getNominatimClient(): NominatimApiService {
+        if (nominatimRetrofit == null) {
+            val logging = HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BASIC
+            }
+
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .build()
+
+            nominatimRetrofit = Retrofit.Builder()
+                .baseUrl(NOMINATIM_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
+                .build()
+        }
+        return nominatimRetrofit!!.create(NominatimApiService::class.java)
     }
 }

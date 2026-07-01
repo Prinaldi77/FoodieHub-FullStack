@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Izin Internet (wajib untuk API) -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Izin Lokasi GPS (untuk fitur otomatis isi alamat via Nominatim API) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,30 +21,37 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <!-- Halaman Pembayaran (WebView Midtrans) -->
         <activity
             android:name=".PaymentWebViewActivity"
             android:exported="false" />
 
+        <!-- Dialog Status Pesanan -->
         <activity
             android:name=".WindowDialogs"
             android:exported="false" />
 
+        <!-- Pilih Lokasi Pengiriman -->
         <activity
             android:name=".ChooseYourLocation"
             android:exported="false" />
 
+        <!-- Daftar Akun Baru -->
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
 
+        <!-- Login -->
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
 
+        <!-- Halaman Awal (Onboarding) -->
         <activity
             android:name=".StartActivity"
             android:exported="false" />
 
+        <!-- Splash Screen - LAUNCHER (titik masuk aplikasi) -->
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -49,6 +61,7 @@
             </intent-filter>
         </activity>
 
+        <!-- Halaman Utama Customer (Beranda, Keranjang, Riwayat, Cari, Profil) -->
         <activity
             android:name=".MainActivity"
             android:exported="true" />

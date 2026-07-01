@@ -166,5 +166,25 @@ data class FoodData(
     @SerializedName("name") val name: String,
     @SerializedName("price") val price: String,
     @SerializedName("image_url") val imageUrl: String?,
-    @SerializedName("description") val description: String?
+    @SerializedName("description") val description: String?,
+    @SerializedName("category") val category: String?
+)
+
+// ============================================================
+// API PUBLIK: OpenStreetMap Nominatim Reverse Geocoding
+// Digunakan untuk konversi koordinat GPS -> nama alamat lengkap
+// Endpoint: https://nominatim.openstreetmap.org/reverse
+// ============================================================
+data class GeocodeResponse(
+    @SerializedName("display_name") val displayName: String?,
+    @SerializedName("address") val address: GeocodeAddress?
+)
+
+data class GeocodeAddress(
+    @SerializedName("road") val road: String?,
+    @SerializedName("suburb") val suburb: String?,
+    @SerializedName("city") val city: String?,
+    @SerializedName("state") val state: String?,
+    @SerializedName("postcode") val postcode: String?,
+    @SerializedName("country") val country: String?
 )
